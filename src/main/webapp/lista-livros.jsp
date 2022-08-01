@@ -31,6 +31,6 @@
         </tr>
         </c:forEach>
     </table>
-
+    <a href="cadastro-livro.jsp">Cadastre outro livro!</a>
 </body>
 </html>
