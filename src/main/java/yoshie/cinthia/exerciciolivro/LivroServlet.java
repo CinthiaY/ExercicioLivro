@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(value = "/livro-servlet") //value é o mapeamento que ia lá no xml
 public class LivroServlet extends HttpServlet {
@@ -35,12 +36,16 @@ public class LivroServlet extends HttpServlet {
 
         LivroBO businessObject = new LivroBO();
         Livro livro = new Livro(nome, autor);
-        businessObject.save(livro);
+
         Livro livroSalvo = businessObject.save(livro);
 
         req.setAttribute("idLivroSalvo", livroSalvo.getId());
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("sucesso-cadastro.jsp");
+        List<Livro> livros = businessObject.findAll();
+
+        req.setAttribute("livros", livros);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("lista-livros.jsp");
         dispatcher.forward(req, resp);
 
     }

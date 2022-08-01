@@ -12,6 +12,7 @@ public class LivroDAO {
     private static long countLivro;
 
     public Livro save(Livro livro) {
+        countLivro++;
         livro.setId(countLivro);
         bancoLivros.add(livro);
         return livro;

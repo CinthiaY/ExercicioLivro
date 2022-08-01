@@ -11,6 +11,6 @@
     <title>Sucesso no cadastro do livro</title>
 </head>
 <body>
-    <h1>Livro ${nomeLivro} cadastrado com ID ${idLivroSalvo}!!!</h1>
+    <h1>Livro ${nomeLivro} cadastrado com ID: ${idLivroSalvo}!!!</h1>
 </body>
 </html>
